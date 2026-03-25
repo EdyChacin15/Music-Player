@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>MUSIC PLAYER</title>
+        <link rel="stylesheet" href="./style/index.css">
+        <link rel="icon" href="./bucket/icon/favicon.ico" type="image/x-icon">
+    </head>
+    <body onload="getList()">
+        <header>
+            <h1>MUSIC PLAYER</h1>
+        </header>
+        <main class="container">
+            <div id="playlist-container">
+                <div id="playlist">
+                    <table id="_table">
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+
+            <section id="player-container">
+                <div id="current-song-container">
+                    
+                    <div id="cover-container">
+                        <img src="./bucket/Portadas/null.png" id="cover" alt="Cover">
+                    </div>
+                    
+                    <div id="song-details">
+                        <b id="ti"></b>
+                        <br/>
+                        <span id="ar"></span>
+                    </div>
+                    <div class="time-container">
+                        <span class="time" id="current-time"></span>
+                        <span class="time" id="duration"></span>
+                    </div>
+                    
+                    <audio id="player" controls></audio>
+                    <div class="controls">
+                        <div class="control-group">
+                            <img src="./bucket/icon/next.svg" id="btn-previous" alt="Previous Song">
+                            <img src="./bucket/icon/play.svg" id="main-playPause" alt="Play/Pause">
+                            <img src="./bucket/icon/next.svg" id="btn-next" alt="Next Song">
+                        </div>
+                        <div id="playback-button-container">
+                            <img src="./bucket/icon/list.svg" id="playback-button" alt="Change Playback State">
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <script src="./script/index.js"></script>
+    </body>
+</html>

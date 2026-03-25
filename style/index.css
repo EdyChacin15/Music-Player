@@ -1,0 +1,264 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #535353;
+}
+
+header {
+    background: linear-gradient(45deg, #8f0000, #353535);
+    color: rgb(221, 221, 221);
+    width: 100%;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 0 10px #000;
+    text-shadow: 1px 1px 1px #000, 2px 2px 2px #000, 3px 3px 3px #000;
+    cursor: default;
+    border-radius: 10px;
+}
+
+td b{
+    color: #ffffffd1;
+}
+
+td span{
+    color: #808080d1;
+}
+
+#playlist-container, #player-container {
+    display: flex;
+    box-sizing: border-box;
+}
+
+#playlist-container {
+    background-color: #8f0000;
+    flex-direction: column;
+    overflow-y: auto;
+    padding: 20px;
+    min-height: 0;
+}
+
+#player-container {
+    background-color: #bebebe;
+    padding: 5%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 0;
+    overflow: hidden;
+}
+
+#current-song-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    flex: 1;
+}
+
+
+#_table {
+    width: 100%;
+    overflow: auto; 
+    border-collapse: collapse;
+    margin-top: 50px;
+    
+}
+
+#_table td {
+    padding: 8px;
+    text-align: left;
+    font-size: 110%;
+    border-bottom: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    cursor: default;
+}
+
+#_table tr:hover {
+    background-color: #7d0000;
+    transition: background-color 0.3s;
+}
+
+audio {
+    width: 100%;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    display: none;
+}
+
+img[id^="btn-playPause"]{
+    cursor: pointer;
+    width: 40px;
+    border-radius: 50%;
+    background-color: rgb(35, 35, 35);
+    border: 8px solid rgb(35, 35, 35);
+    box-shadow: 0 0 10px #000;
+}
+
+img[id^="btn-playPause"]:hover{
+    transform: scale(0.9);
+    transition: transform 0.3s;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 4fr 6fr;
+    flex: 1;
+    max-height: calc(100vh - 120px);
+    width: 100%;
+    max-width: 1000px;
+    margin: 30px 0;
+    background-color: transparent;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.time-container{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: rgb(127, 127, 127);
+    font-size: 100%;
+}
+
+#song-details{
+    font-size: 120%;
+    margin: 10px;
+    color: #303030;
+    cursor: default;
+}
+
+#cover{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    object-fit: cover;
+}
+
+#cover-container{
+    aspect-ratio: 1 / 1;
+    flex: 1;
+    min-height: 0;
+    max-width: 100%;
+    margin: 8px auto 0;
+}
+
+.controls {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+}
+
+#playback-button-container {
+    align-items: center;
+    width: 50px;
+}
+
+#btn-next, #btn-previous{
+    width: 50px;
+    height: 50px;
+}
+
+#btn-previous{
+    width: 50px;
+    height: 50px;
+    transform: rotate(180deg);
+}
+
+#main-playPause{
+    width: 90px;
+    height: 90px;
+}
+
+#main-playPause:hover, #btn-next:hover, #playback-button{
+    transform: scale(0.9);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+#btn-previous:hover{
+    transform: scale(0.9) rotate(180deg);
+    transition: transform 0.3s;
+    cursor: pointer;
+}
+
+/* debo mejorar en css, selectores y demas */
+
+@media (max-width: 768px) {
+    body, html {
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+        height: calc(100vh - 100px);
+        margin: 10px 0;
+    }
+
+    #player-container {
+        grid-row: 1;
+        padding: 3% 8%;
+    }
+
+    #playlist-container {
+        grid-row: 2;
+        padding: 10px;
+    }
+
+    #cover-container {
+        width: 100px;
+        flex: none;
+        margin-top: 0;
+    }
+
+    #song-details {
+        font-size: 100%;
+        margin: 4px 6px;
+    }
+
+    .time-container {
+        font-size: 85%;
+    }
+
+    #main-playPause {
+        width: 55px;
+        height: 55px;
+    }
+
+    #btn-next, #btn-previous {
+        width: 35px;
+        height: 35px;
+    }
+
+    #_table {
+        margin-top: 5px;
+    }
+}
