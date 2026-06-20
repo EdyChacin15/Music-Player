@@ -9,7 +9,7 @@ var music = [
     {
         "title":"Angeles Fuimos",
         "singer":"Adrian Barba",
-        "path":"./bucket/Angeles_Fuimos.mp3",
+        "path":"./bucket/angeles_fuimos.mp3",
         "cover":"./bucket/Portadas/angeles.png",
     },
     
